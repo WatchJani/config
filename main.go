@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bufio"
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
@@ -48,10 +49,14 @@ func main() {
 	}
 
 	var answer string
+	reader := bufio.NewReader(os.Stdin)
 	for index := range query {
 		answer = ""
 		fmt.Print(query[index].Question, query[index].Default, " ")
-		fmt.Scanln(&answer)
+		answer, err := reader.ReadString('\n')
+
+		check(err)
+
 		answer = strings.TrimSpace(answer)
 
 		if answer != "" { //set your answer

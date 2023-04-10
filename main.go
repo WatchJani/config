@@ -11,14 +11,11 @@ import (
 	"strings"
 )
 
-//1. bug -> &&
-//4. bug -> we cant add space on our values
-
 func main() {
 	//text template
-	Tamplate()
+	Template()
 
-	//query
+	//query (question and default answer)
 	query := []struct {
 		Question string
 		Default  string
@@ -59,12 +56,16 @@ func main() {
 
 	fmt.Println("About to write to " + dir + "/" + fileName + ":\n")
 
+	//add answer to our struct
 	file := config.New(query[0].Default, query[1].Default, query[2].Default, query[3].Default, query[7].Default, query[8].Default)
 
-	jp, _ := json.MarshalIndent(file, "", "   ")
+	//format to json
+	jp, _ := json.MarshalIndent(file, "", "  ")
 
+	//print our format
 	fmt.Println(string(jp) + "\n\n")
 
+	//are you sure you want to make
 	answer = fmt.Sprintf("")
 	fmt.Print("Is this OK? (yes) ")
 	fmt.Scanln(&answer)
@@ -81,7 +82,7 @@ func check(e error) {
 	}
 }
 
-func Tamplate() {
+func Template() {
 	fmt.Println("This utility will walk you through creating a package.json file.\n" +
 		"It only covers the most common items, and tries to guess sensible defaults.\n\n" +
 

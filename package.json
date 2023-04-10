@@ -1,8 +1,8 @@
 {
-   "name": "Janko",
-   "version": "1.0.2",
-   "description": "To je to",
-   "main": "cool",
+   "name": "express-",
+   "version": "1.0.0",
+   "description": "",
+   "main": "index.js",
    "scripts": {
       "test": "echo \"Error: no test specified\" \u0026\u0026 exit 1"
    },

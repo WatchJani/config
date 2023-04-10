@@ -1,9 +1,9 @@
 package config
 
-import "fmt"
+import "encoding/json"
 
 type Testing struct {
-	Test string `json:"test"`
+	Test json.RawMessage `json:"test"`
 }
 
 type Package struct {
@@ -30,6 +30,6 @@ func New(Name, Version, Description, Main, Author, License string) *Package {
 
 func newTest() Testing {
 	return Testing{
-		Test: fmt.Sprintf("echo \"Error: no test specified\" && exit 1"),
+		Test: json.RawMessage(`"echo \"Error: no test specified\" && exit 1"`),
 	}
 }

@@ -16,21 +16,7 @@ import (
 
 func main() {
 	//text template
-	text := "This utility will walk you through creating a package.json file.\n" +
-		"It only covers the most common items, and tries to guess sensible defaults.\n\n" +
-
-		"This utility will walk you through creating a package.json file.\n" +
-		"It only covers the most common items, and tries to guess sensible defaults.\n\n" +
-
-		"See `npm help init` for definitive documentation on these fields\n" +
-		"and exactly what they do.\n\n" +
-
-		"Use `npm install <pkg>` afterwards to install a package and\n" +
-		"save it as a dependency in the package.json file\n\n" +
-
-		"Press ^C at any time to quit."
-
-	fmt.Println(text)
+	Tamplate()
 
 	//query
 	query := []struct {
@@ -93,4 +79,20 @@ func check(e error) {
 	if e != nil {
 		log.Println(e)
 	}
+}
+
+func Tamplate() {
+	fmt.Println("This utility will walk you through creating a package.json file.\n" +
+		"It only covers the most common items, and tries to guess sensible defaults.\n\n" +
+
+		"This utility will walk you through creating a package.json file.\n" +
+		"It only covers the most common items, and tries to guess sensible defaults.\n\n" +
+
+		"See `npm help init` for definitive documentation on these fields\n" +
+		"and exactly what they do.\n\n" +
+
+		"Use `npm install <pkg>` afterwards to install a package and\n" +
+		"save it as a dependency in the package.json file\n\n" +
+
+		"Press ^C at any time to quit.")
 }
